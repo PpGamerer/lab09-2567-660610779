@@ -21,7 +21,7 @@ export default function Home() {
 
   // Define the function with proper type
   const addTask = (newTaskTitle:string) => {
-    const newTask:TaskItem = { id: nanoid(), title: newTaskTitle, completed: false };
+    const newTask = { id: nanoid(), title: newTaskTitle, completed: false };
     const newTasks = [...tasks, newTask];
     setTasks(newTasks);
   };
@@ -38,7 +38,7 @@ export default function Home() {
     //So objects within an object will be copied too
     const newTasks = structuredClone(tasks);
     //search for a task based on condition
-    const task = newTasks.find((x) => x.id === taskId);
+    const task:any = newTasks.find((x) => x.id === taskId);
     task.completed = !task.completed;
     setTasks(newTasks);
   };
